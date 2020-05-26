@@ -26,7 +26,6 @@ pycairo
 pycups
 pycurl
 pydub
-PyGObject
 python-apt
 python-debian
 python-debianbts
