@@ -27,7 +27,6 @@ pycups
 pycurl
 pydub
 PyGObject
-PySimpleSOAP
 python-apt
 python-debian
 python-debianbts
