@@ -6,7 +6,6 @@ aiohttp
 attrs
 certifi
 chardet
-chrome-gnome-shell
 colour
 cson
 cupshelpers
