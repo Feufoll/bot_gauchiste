@@ -29,5 +29,10 @@ async def clivage(ctx, nb_de_mots: int, delai: float):
 
 	file.close()
 
+	
+@bot.command(name='barcelone36')
+async def barcelone36(ctx):
+	await ctx.send(f'https://fr.wikipedia.org/wiki/R%C3%A9volution_sociale_espagnole_de_1936')
+
 
 bot.run(TOKEN)
