@@ -25,7 +25,7 @@ async def clivage(ctx, nb_de_mots: int, delai: float, mot = 'null'):
 		word_set.add(mot)
 		for word in word_set:
 			file.write(word + '\n ')
-			file.truncate(os.stat("liste_francais.txt", dir_fd=relative_path).st_size - 1)
+			file.truncate(os.stat(os.path.abspath("liste_francais.txt")).st_size - 1)
 		file.close()
 		message = await ctx.send(mot)
 		await message.add_reaction('🇬')
