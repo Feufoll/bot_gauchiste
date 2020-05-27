@@ -32,7 +32,9 @@ async def clivage(ctx, nb_de_mots: int, delai: float):
 	
 @bot.command(name='barcelone36')
 async def barcelone36(ctx):
-	await ctx.send(f'https://fr.wikipedia.org/wiki/R%C3%A9volution_sociale_espagnole_de_1936')
+	await ctx.send(f'La révolution sociale espagnole de 1936 (revolución social española de 1936), couramment désignée sous le nom de révolution espagnole (revolución española)1, englobe tous les événements de type révolutionnaire déclenchés en Espagne, durant la guerre civile, en réponse à la tentative de coup d'État militaire les 17 et 18 juillet 1936.
+
+Les principaux représentants de ces mouvements étaient la Confédération nationale du travail (CNT/AIT), la Fédération anarchiste ibérique (FAI), le Parti ouvrier d'unification marxiste (POUM), ainsi que les ailes radicales du Parti socialiste ouvrier espagnol (PSOE) et de l'Union générale des travailleurs (UGT). Les bases idéologiques de cette révolution se rattachent très clairement à l'anarcho-syndicalisme et au communisme libertaire, extrêmement puissant en Espagne dans les années 1930, mais aussi en partie au marxisme révolutionnaire. https://fr.wikipedia.org/wiki/R%C3%A9volution_sociale_espagnole_de_1936')
 
 
 bot.run(TOKEN)
