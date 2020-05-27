@@ -12,16 +12,24 @@ TOKEN = os.environ.get("DISCORD_TOKEN")
 
 bot = commands.Bot(command_prefix="(A)")
 
-@bot.command(name='clivage', help="Lance une partie du jeu du clivage, syntaxe : (A)clivage nb_de_mots delai")
-async def clivage(ctx, nb_de_mots: int, delai: float):
+@bot.command(name='clivage', help="Lance une partie du jeu du clivage, syntaxe : (A)clivage *nb_de_mots* *delai* *mot_a_ajouter(optionnel)*")
+async def clivage(ctx, nb_de_mots: int, delai: float, mot = 'null'):
 
 	file = open("liste_francais.txt","r",encoding = "ISO-8859-15")
 
 	words = file.readlines()
-
+	word_set = set(words)
+	
+	if mot!='null':
+		word_set.add(mot)
+		message = await ctx.send(mot)
+		await message.add_reaction('🇬')
+		await message.add_reaction('🇩')
+		await asyncio.sleep(delai)
+		
+	
 	for _ in range(nb_de_mots):
-
-		response = random.choice(words)
+		response = random.choice(word_set)
 		message = await ctx.send(response)
 		await message.add_reaction('🇬')
 		await message.add_reaction('🇩')
