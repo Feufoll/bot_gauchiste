@@ -29,7 +29,7 @@ async def clivage(ctx, nb_de_mots: int, delai: float, mot = 'null'):
 		
 	
 	for _ in range(nb_de_mots):
-		response = random.choice(word_set)
+		response = random.choice(words)
 		message = await ctx.send(response)
 		await message.add_reaction('🇬')
 		await message.add_reaction('🇩')
