@@ -20,7 +20,7 @@ async def clivage(ctx, nb_de_mots: int, delai: float, mot = 'null'):
 	file.close()
 	
 	if mot!='null':
-		file = open("liste_francais.txt", "w", encoding = "ISO-8895-15")
+		file = open("liste_francais.txt", "w", encoding = "ISO-8859-15")
 		file.writelines(mot)
 		file.close()
 		message = await ctx.send(mot)
