@@ -3,12 +3,13 @@ import os
 import random
 import asyncio
 import time
+import psycopg2
 
 from discord.ext import commands
 from boto.s3.connection import S3Connection
 
 TOKEN = os.environ.get("DISCORD_TOKEN")
-
+DATABASE_URL = os.environ['DATABASE_URL']
 
 bot = commands.Bot(command_prefix="(A)")
 
@@ -20,6 +21,7 @@ async def clivage(ctx, nb_de_mots: int, delai: float, mot = 'null'):
 	word_set = set(words)
 	file.close()
 	
+	
 	if mot!='null':
 		file = open("liste_francais.txt", "w", encoding = "ISO-8859-15")
 		word_set.add(mot)
@@ -30,6 +32,13 @@ async def clivage(ctx, nb_de_mots: int, delai: float, mot = 'null'):
 		await message.add_reaction('🇬')
 		await message.add_reaction('🇩')
 		await asyncio.sleep(delai)
+		
+		conn = psycopg2.connect(DATABASE_URL, sslmode='require')
+		cur = conn.cursor()
+		insrt_sql = """INSERT INTO mots(mot) VALUES(%s)"""
+		cur.execute(insrt_sql, (mot))
+		conn.commit()
+		cur.close()
 		
 	
 	for _ in range(nb_de_mots):
