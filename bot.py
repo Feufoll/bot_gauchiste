@@ -7,7 +7,7 @@ import time
 from discord.ext import commands
 from boto.s3.connection import S3Connection
 
-TOKEN = S3Connection(os.environ['DISCORD_TOKEN'])
+TOKEN = os.environ.get("DISCORD_TOKEN")
 
 
 bot = commands.Bot(command_prefix="(A)")
