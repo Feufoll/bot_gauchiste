@@ -33,13 +33,6 @@ async def clivage(ctx, nb_de_mots: int, delai: float, mot = 'null'):
 		await message.add_reaction('🇩')
 		await asyncio.sleep(delai)
 		
-		conn = psycopg2.connect(DATABASE_URL, sslmode='require')
-		cur = conn.cursor()
-		insrt_sql = """INSERT INTO mots(mot) VALUES(%s)"""
-		cur.execute(insrt_sql, (mot))
-		conn.commit()
-		cur.close()
-		
 	
 	for _ in range(nb_de_mots):
 		response = random.choice(words)
