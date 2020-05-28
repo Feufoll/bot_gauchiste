@@ -13,7 +13,7 @@ bot = commands.Bot(command_prefix="(A)")
 @bot.command(name='clivage', help="Lance une partie du jeu du clivage, syntaxe : (A)clivage *nb_de_mots* *delai* *mot_a_ajouter(optionnel)*")
 async def clivage(ctx, nb_de_mots: int, delai: float, mot = 'null'):
 
-	file = open("liste_francais.txt","r",encoding = "ISO-8859-15")
+	file = open("liste_francais.txt","r")
 	words = file.readlines()
 	word_set = set(words)
 	file.close()
