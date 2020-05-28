@@ -20,7 +20,7 @@ async def clivage(ctx, nb_de_mots: int, delai: float, mot = 'null'):
 	
 	
 	if mot!='null':
-		file = open("liste_francais.txt", "w", encoding = "ISO-8859-15")
+		file = open("liste_francais.txt", "w")
 		word_set.add(mot)
 		file.seek(0)
 		file.writelines(list(word_set))
