@@ -3,13 +3,10 @@ import os
 import random
 import asyncio
 import time
-import psycopg2
 
 from discord.ext import commands
-from boto.s3.connection import S3Connection
 
 TOKEN = os.environ.get("DISCORD_TOKEN")
-DATABASE_URL = os.environ['DATABASE_URL']
 
 bot = commands.Bot(command_prefix="(A)")
 
@@ -50,6 +47,6 @@ async def barcelone36(ctx):
 
 @bot.command(name='louise-michel')
 async def louise_michel(ctx):
-	await ctx.send(f'Clémence-Louise Michel, dite Louise Michel Écouter, née le 29 mai 1830 à Vroncourt-la-Côte, en Haute-Marne, et morte le 9 janvier 1905 à Marseille, alias « Enjolras », est une institutrice, militante anarchiste, franc-maçonne, aux idées féministes et l’une des figures majeures de la Commune de Paris. Première à arborer le drapeau noir, elle popularise celui-ci au sein du mouvement libertaire. niCoB à aussi attribué une de ses citations à Bakou, ce qui entraîna un drama.')
+	await ctx.send(f'Clémence-Louise Michel, dite Louise Michel Écouter, née le 29 mai 1830 à Vroncourt-la-Côte, en Haute-Marne, et morte le 9 janvier 1905 à Marseille, alias « Enjolras », est une institutrice, militante anarchiste, franc-maçonne, aux idées féministes et l’une des figures majeures de la Commune de Paris. Première à arborer le drapeau noir, elle popularise celui-ci au sein du mouvement libertaire. niCoB à aussi attribué une de ses citations à Bakou, ce qui entraîna un drama. https://fr.wikipedia.org/wiki/Louise_Michel')
 
 bot.run(TOKEN)
